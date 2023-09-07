@@ -23,7 +23,7 @@ app.get('/api', (req, res) => {
     const response = {
       slack_name: slack_name,
       current_day: day,
-      utc_time: date.toISOString(),
+      utc_time: date.toISOString().slice(0, -5) + 'Z',
       track: track,
       github_file_url: 'https://github.com/chriss1525/HNGX/blob/master/stage_1/app.js',
       github_repo_url: 'https://github.com/chriss1525/HNGX',
