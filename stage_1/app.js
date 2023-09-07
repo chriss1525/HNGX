@@ -30,6 +30,9 @@ app.get('/api/info', (req, res) => {
       "status_code": "200", 
     };
 
+    // set content type to json
+    res.setHeader('Content-Type', 'application/json');
+
     // send response object
     res.status(200).json(response);
   } catch (error) {
