@@ -13,11 +13,7 @@ app.get('/api/info', (req, res) => {
     const track = req.query.track;
 
     // get current UTC time
-    const date = new Date();
-    const offsetHours = date.getTimezoneOffset() / 60;
-    //if (offsetHours < -2 || offsetHours > 2) {
-    //return res.status(400).send('Invalid timezone');
-    //}
+    const date = new Date(); 
 
     // get current day of the week
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -27,10 +23,10 @@ app.get('/api/info', (req, res) => {
     const response = {
       slack_name: slack,
       current_day: day,
-      utc_time: date.toUTCString(),
+      utc_time: date.toISOString(),
       track: track,
-      github_file_url: '',
-      github_repo_url: '',
+      github_file_url: 'https://github.com/chriss1525/HNGX/blob/master/stage_1/app.js',
+      github_repo_url: 'https://github.com/chriss1525/HNGX',
       "status_code": "200", 
     };
 
