@@ -9,7 +9,7 @@ app.use(express.json());
 // Handle GET requests
 app.get('/api', (req, res) => {
   try {
-    const slack = req.query.slack;
+    const slack_name = req.query.slack;
     const track = req.query.track;
 
     // get current UTC time
@@ -21,7 +21,7 @@ app.get('/api', (req, res) => {
 
     // construct response object
     const response = {
-      slack_name: slack,
+      slack_name: slack_name,
       current_day: day,
       utc_time: date.toISOString(),
       track: track,
