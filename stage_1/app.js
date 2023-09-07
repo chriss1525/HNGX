@@ -7,7 +7,7 @@ const port = 3002;
 app.use(express.json());
 
 // Handle GET requests
-app.get('/api/info', (req, res) => {
+app.get('/api', (req, res) => {
   try {
     const slack = req.query.slack;
     const track = req.query.track;
